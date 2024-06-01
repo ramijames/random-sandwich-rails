@@ -1,0 +1,11 @@
+<h1>Ingredient Categories</h1>
+
+<% if @categories.empty? %>
+  <p>There are no Categories.</p>
+<% else %>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+<% end %>

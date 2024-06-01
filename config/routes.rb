@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root "sandwiches#index"
   resources :sandwiches
   resources :ingredients
+  resources :categories
 
   get "/sandwiches" => "sandwiches#index"
 end
