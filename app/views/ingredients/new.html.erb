@@ -1,0 +1,14 @@
+<h1>Add a new ingredient</h1>
+
+<%= form_for @ingredient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :category %>
+  <%= f.number_field :category %>
+
+  <%= f.submit %>
+<% end %>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "sandwiches#index"
+  resources :sandwiches
+  resources :ingredients
 
   get "/sandwiches" => "sandwiches#index"
 end

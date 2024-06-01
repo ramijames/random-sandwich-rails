@@ -1,0 +1,11 @@
+<h1>Add a new sandwich</h1>
+
+<%= form_for @sandwich do |f| %>
+  <%= f.label :contents %>
+  <%= f.text_field :contents %>
+
+  <%= f.label :created_by %>
+  <%= f.number_field :created_by %>
+
+  <%= f.submit %>
+<% end %>
