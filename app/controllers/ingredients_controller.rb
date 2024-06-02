@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
-      redirect_to @ingredient
+      redirect_to ingredients_path
     else
       render 'new'
     end
@@ -20,7 +20,7 @@ class IngredientsController < ApplicationController
   private
   
   def ingredient_params
-    params.require(:ingredient).permit(:name, :image, :category)
+    params.require(:ingredient).permit(:name, :image, :category_id)
   end
 
 end

@@ -3,12 +3,21 @@
 <%= form_for @ingredient do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <% if @ingredient.errors[:name].any? %>
+    <div><%= @ingredient.errors[:name].join(", ") %></div>
+  <% end %>
 
   <%= f.label :image %>
   <%= f.text_field :image %>
+  <% if @ingredient.errors[:image].any? %>
+    <div><%= @ingredient.errors[:image].join(", ") %></div>
+  <% end %>
 
   <%= f.label :category %>
-  <%= f.number_field :category %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, prompt: 'Select a category' %>
+  <% if @ingredient.errors[:category_id].any? %>
+    <div><%= @ingredient.errors[:category_id].join(", ") %></div>
+  <% end %>
 
   <%= f.submit %>
 <% end %>
